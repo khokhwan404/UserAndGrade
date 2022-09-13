@@ -1,20 +1,30 @@
 public class User {
-    private string InputName;
-    private string InputSurname;
-    private string InputStudentID;
+    public string InputName;
+    public string InputSurname;
+    public string InputStudentID;
+    private Grade gradeInfomation;
 
-    public User(string Name, string Surname, string StudentID) {
+    public User(string Name, string Surname, string StudentID, int score) {
 
-        InputName = Name;
-        InputSurname = Surname;
-        InputStudentID = StudentID;
+        this.InputName = Name;
+        this.InputSurname = Surname;
+        this.InputStudentID = StudentID;
+        this.gradeInfomation = new Grade(score);
+    }
+
+    public string PrintGrade() {
+        return this.gradeInfomation.ShowGrade();
+    }
+
+    public string PrintScore() {
+        return this.gradeInfomation.ShowScore();
     }
 
     public void PrintInoutInformation() {
-        Console.WriteLine();
-        Console.Write("Name: {0}",InputName);
-        Console.Write(InputSurname);
-        Console.Write(InputStudentID);
-        Console.WriteLine();
+        return "User Infornmation: "
+        + this.Name + this.Surname + " " + 
+        this.StudentID + "Score is: " +
+        this.gradeInfomation.ShowScore() + "Grade is: ";
+        this.gradeInfomation.ShowGrade();
     }
 }
